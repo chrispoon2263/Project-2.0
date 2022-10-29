@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		51015D9429031FFF00CE41BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51015D9329031FFF00CE41BE /* HomeViewController.swift */; };
 		A508891829034B5500B7B9FD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508891729034B5500B7B9FD /* SettingsViewController.swift */; };
+		A5703EE4290CBE82001673C6 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5703EE3290CBE82001673C6 /* AlbumViewController.swift */; };
+		A5703EE6290CBEA1001673C6 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5703EE5290CBEA1001673C6 /* CollectionViewCell.swift */; };
 		A5E71A572902FF9400A64124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E71A562902FF9400A64124 /* AppDelegate.swift */; };
 		A5E71A592902FF9400A64124 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E71A582902FF9400A64124 /* SceneDelegate.swift */; };
 		A5E71A5B2902FF9400A64124 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E71A5A2902FF9400A64124 /* TextViewController.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		51015D9329031FFF00CE41BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A508891729034B5500B7B9FD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A5703EE3290CBE82001673C6 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		A5703EE5290CBEA1001673C6 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A5E71A532902FF9400A64124 /* IOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E71A562902FF9400A64124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5E71A582902FF9400A64124 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 				A5E71A582902FF9400A64124 /* SceneDelegate.swift */,
 				A5E71A5A2902FF9400A64124 /* TextViewController.swift */,
 				A5E71A5C2902FF9400A64124 /* Main.storyboard */,
+				A5703EE3290CBE82001673C6 /* AlbumViewController.swift */,
+				A5703EE5290CBEA1001673C6 /* CollectionViewCell.swift */,
 				A508891729034B5500B7B9FD /* SettingsViewController.swift */,
 				51015D9329031FFF00CE41BE /* HomeViewController.swift */,
 				A5E71A6D2903026300A64124 /* PictureViewController.swift */,
@@ -152,8 +158,10 @@
 			files = (
 				A5E71A5B2902FF9400A64124 /* TextViewController.swift in Sources */,
 				A5E71A612902FF9400A64124 /* IOSProject.xcdatamodeld in Sources */,
+				A5703EE6290CBEA1001673C6 /* CollectionViewCell.swift in Sources */,
 				A508891829034B5500B7B9FD /* SettingsViewController.swift in Sources */,
 				A5E71A572902FF9400A64124 /* AppDelegate.swift in Sources */,
+				A5703EE4290CBE82001673C6 /* AlbumViewController.swift in Sources */,
 				A5E71A592902FF9400A64124 /* SceneDelegate.swift in Sources */,
 				A5E71A6E2903026300A64124 /* PictureViewController.swift in Sources */,
 				51015D9429031FFF00CE41BE /* HomeViewController.swift in Sources */,

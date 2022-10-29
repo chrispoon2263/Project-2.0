@@ -8,9 +8,11 @@
 import UIKit
 
 let imageSegueIdentifier = "ImageSegueIdentifier"
-
+let albumSegueIdentifier = "AlbumSegueIdentifier"
 class HomeViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,11 @@ class HomeViewController: UIViewController {
         if segue.identifier == imageSegueIdentifier, let nextVC = segue.destination as? TextViewController {
             nextVC.delegate = self
         }
+        
+        if segue.identifier == albumSegueIdentifier, let nextVC = segue.destination as? AlbumViewController {
+            nextVC.delegate = self
+        }
+        
     }
     
     @IBAction func makeImageButtonPressed(_ sender: Any) {
