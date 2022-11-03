@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 let lakeImage = UIImage(named: "lake.png")!
 let targetSize = CGSize(width: 100, height: 100)
@@ -17,11 +17,10 @@ let scaledImage = lakeImage.scalePreservingAspectRatio(
 
 var items: [UIImage] = [scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage]
 var originalImages: [UIImage] = []
+
 protocol reloadView{
     func reloadCollectionView()
 }
-
-
 
 class AlbumViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, reloadView{
   

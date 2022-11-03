@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 class PictureViewController: UIViewController {
     
@@ -52,9 +53,31 @@ class PictureViewController: UIViewController {
                 let targetSize = CGSize(width: 100, height: 100)
                 let scaledImage = image?.scalePreservingAspectRatio(targetSize: targetSize)
                 items.append(scaledImage!)
+                self.saveToCoreData(image:scaledImage!)
             }
         })
         getDataTask.resume()
+    }
+    
+    // Saves images to core data
+    func saveToCoreData(image: UIImage) {
+        let pngImageData = image.pngData()
+        let GeneratedImage = NSEntityDescription.entity(forEntityName: "GeneratedImage", in: context)!
+        let storedImage = NSManagedObject(entity: GeneratedImage, insertInto: context)
+        storedImage.setValue(pngImageData, forKey: "storedImage")
+        saveContext()
+    }
+    
+    // Saves context
+    func saveContext() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
 
 }
