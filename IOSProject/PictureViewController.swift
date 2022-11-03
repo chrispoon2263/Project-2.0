@@ -14,6 +14,8 @@ class PictureViewController: UIViewController {
     var receiveString = ""
     var delegate: UIViewController!
     var urlString = "https://api.computerender.com/generate/"
+    var tempScaledImage = UIImage()
+    var tempImage = UIImage()
     
     // Create UIImageView Object to hold the api data when it is received
     let imageView: UIImageView = {
@@ -48,12 +50,15 @@ class PictureViewController: UIViewController {
                 self.imageView.image = image
             }
             
-            DispatchQueue(label: "SaveImageQueue", qos: .background, attributes: .concurrent).async {
+            DispatchQueue(label: "GetImageQueue", qos: .background, attributes: .concurrent).async {
                 let image = UIImage(data: data)
                 let targetSize = CGSize(width: 100, height: 100)
                 let scaledImage = image?.scalePreservingAspectRatio(targetSize: targetSize)
-                items.append(scaledImage!)
-                self.saveToCoreData(image:scaledImage!)
+                //items.append(scaledImage!)
+               
+                //self.saveToCoreData(image:scaledImage!)
+                self.tempScaledImage = scaledImage!
+                self.tempImage = image!
             }
         })
         getDataTask.resume()
@@ -79,6 +84,26 @@ class PictureViewController: UIViewController {
             }
         }
     }
+    
+    
+    
+    @IBAction func AlbumButtonPressed(_ sender: Any) {
+        if let navController = self.navigationController{
+            // Pop off two view controllers from the stack
+            navController.popViewController(animated: false)
+            navController.popViewController(animated: false)
+            // Push the album view controller to the stack
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "albumStoryboardID") as! AlbumViewController
+            navController.pushViewController(vc, animated: true)
+        }
+    }
+    
+    @IBAction func SaveButtonPressed(_ sender: Any) {
+        items.append(tempScaledImage)
+        saveToCoreData(image: tempScaledImage)
+        
+    }
+    
 
 }
 

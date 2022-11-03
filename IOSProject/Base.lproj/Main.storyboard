@@ -90,6 +90,26 @@
                     <view key="view" contentMode="scaleToFill" id="Qbs-KQ-MxP">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTb-aO-Aen">
+                                <rect key="frame" x="67" y="662" width="112" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save Image"/>
+                                <connections>
+                                    <action selector="SaveButtonPressed:" destination="MGs-DE-j0E" eventType="touchUpInside" id="O2X-IK-iPj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdz-XK-lfd">
+                                <rect key="frame" x="209" y="662" width="112" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Album"/>
+                                <connections>
+                                    <action selector="AlbumButtonPressed:" destination="MGs-DE-j0E" eventType="touchUpInside" id="EO3-n3-1kk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sJo-q5-hfU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -97,12 +117,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rty-Uo-TpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7818" y="-768"/>
+            <point key="canvasLocation" x="7816.9230769230762" y="-768.48341232227483"/>
         </scene>
         <!--Album View Controller-->
         <scene sceneID="i7U-Ls-bc4">
             <objects>
-                <viewController id="ukL-gk-ooC" customClass="AlbumViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="albumStoryboardID" id="ukL-gk-ooC" customClass="AlbumViewController" customModule="IOSProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ict-QA-Hjz">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

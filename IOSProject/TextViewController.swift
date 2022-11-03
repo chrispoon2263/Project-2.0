@@ -29,10 +29,5 @@ class TextViewController: UIViewController {
         let text = inputTextField.text!.replacingOccurrences(of: " ", with: "-")
         print(text)
     }
-    
-    func hello() {
-        print("Hello")
-    }
-    
 }
 
