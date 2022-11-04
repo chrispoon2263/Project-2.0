@@ -22,7 +22,7 @@
                                 <rect key="frame" x="16" y="135" width="358" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dus-mT-YGH">
                                 <rect key="frame" x="133" y="390" width="126" height="35"/>
@@ -31,7 +31,6 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Create Image"/>
                                 <connections>
                                     <action selector="createButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwJ-GN-FJq"/>
-                                    <segue destination="MGs-DE-j0E" kind="show" identifier="SeguePictureVC" id="xIv-KN-bnh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,6 +40,7 @@
                     <navigationItem key="navigationItem" id="nMB-vo-oG9"/>
                     <connections>
                         <outlet property="inputTextField" destination="mRu-mI-bTe" id="ikC-Dy-ZQ2"/>
+                        <segue destination="MGs-DE-j0E" kind="show" identifier="SeguePictureVC" id="FIn-XO-8A1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

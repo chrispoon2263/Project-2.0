@@ -27,12 +27,10 @@ class PictureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(receiveString)
         urlString += receiveString
         view.addSubview(imageView)
         imageView.center = view.center
         callAPI()
-
     }
     
     // API CALL function
@@ -54,9 +52,9 @@ class PictureViewController: UIViewController {
                 let image = UIImage(data: data)
                 let targetSize = CGSize(width: 100, height: 100)
                 let scaledImage = image?.scalePreservingAspectRatio(targetSize: targetSize)
-                //items.append(scaledImage!)
+                items.append(scaledImage!)
                
-                //self.saveToCoreData(image:scaledImage!)
+                self.saveToCoreData(image:scaledImage!)
                 self.tempScaledImage = scaledImage!
                 self.tempImage = image!
             }
