@@ -17,7 +17,7 @@ class PictureViewController: UIViewController {
     var tempScaledImage = UIImage()
     var tempImage = UIImage()
     
-    // Create UIImageView Object to hold the api data when it is received
+    // Create UIImageView Programatically
     let imageView: UIImageView = {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 350, height: 350))
         imageView.contentMode = .scaleAspectFit
@@ -27,9 +27,14 @@ class PictureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Receive string from TextVC and add url in front of the receive string
         urlString += receiveString
+        
+        // Move imageView's center to midX and 350 pixels from top usingFrames/bounds
+        imageView.center = CGPoint(x: view.bounds.midX, y: 350)
         view.addSubview(imageView)
-        imageView.center = view.center
+        
+        // Call the API
         callAPI()
     }
     
@@ -38,8 +43,10 @@ class PictureViewController: UIViewController {
         guard let url = URL(string: urlString) else {
             return
         }
-        let getDataTask = URLSession.shared.dataTask(with: url, completionHandler: {data, _, error in
+        let getDataTask = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
             guard let data = data, error == nil else{
+                if let error = error {
+                }
                 return
             }
 
@@ -83,6 +90,13 @@ class PictureViewController: UIViewController {
         }
     }
     
+    func perform<T>(_ expression: @autoclosure () throws -> T, errorTransform: (Error) -> Error) throws -> T {
+        do {
+            return try expression()
+        } catch {
+            throw errorTransform(error)
+        }
+    }
     
     
     @IBAction func AlbumButtonPressed(_ sender: Any) {
