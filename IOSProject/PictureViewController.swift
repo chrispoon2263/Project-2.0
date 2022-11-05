@@ -45,8 +45,6 @@ class PictureViewController: UIViewController {
         }
         let getDataTask = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
             guard let data = data, error == nil else{
-                if let error = error {
-                }
                 return
             }
 
@@ -60,7 +58,7 @@ class PictureViewController: UIViewController {
                 let targetSize = CGSize(width: 100, height: 100)
                 let scaledImage = image?.scalePreservingAspectRatio(targetSize: targetSize)
                 items.append(scaledImage!)
-               
+                // TODO ADD ORIGINAL IMAGE TO COREDATA
                 self.saveToCoreData(image:scaledImage!)
                 self.tempScaledImage = scaledImage!
                 self.tempImage = image!
@@ -90,15 +88,6 @@ class PictureViewController: UIViewController {
         }
     }
     
-    func perform<T>(_ expression: @autoclosure () throws -> T, errorTransform: (Error) -> Error) throws -> T {
-        do {
-            return try expression()
-        } catch {
-            throw errorTransform(error)
-        }
-    }
-    
-    
     @IBAction func AlbumButtonPressed(_ sender: Any) {
         if let navController = self.navigationController{
             // Pop off two view controllers from the stack
@@ -112,10 +101,8 @@ class PictureViewController: UIViewController {
     
     @IBAction func SaveButtonPressed(_ sender: Any) {
         items.append(tempScaledImage)
+        //ADD ORIGINAL IMAGE TO CORE DATA
         saveToCoreData(image: tempScaledImage)
-        
     }
-    
-
 }
 
