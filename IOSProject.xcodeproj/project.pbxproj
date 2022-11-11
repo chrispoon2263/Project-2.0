@@ -59,11 +59,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A52D135C291ED41700C203FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A5E71A4A2902FF9400A64124 = {
 			isa = PBXGroup;
 			children = (
 				A5E71A552902FF9400A64124 /* IOSProject */,
 				A5E71A542902FF9400A64124 /* Products */,
+				A52D135C291ED41700C203FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

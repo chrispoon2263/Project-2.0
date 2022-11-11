@@ -14,8 +14,7 @@ class PictureViewController: UIViewController {
     var receiveString = ""
     var delegate: UIViewController!
     var urlString = "https://api.computerender.com/generate/"
-    var tempScaledImage = UIImage()
-    var tempImage = UIImage()
+    var image = UIImage()
     
     // Create UIImageView Programatically
     let imageView: UIImageView = {
@@ -49,13 +48,9 @@ class PictureViewController: UIViewController {
             }
 
             DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                self.imageView.image = image
-                
-                let targetSize = CGSize(width: 100, height: 100)
-                let scaledImage = image?.scalePreservingAspectRatio(targetSize: targetSize)
-                self.tempScaledImage = scaledImage!
-                self.tempImage = image!
+                //update UIImageView
+                self.image = UIImage(data: data)!
+                self.imageView.image = self.image
             }
         })
         getDataTask.resume()
@@ -94,9 +89,13 @@ class PictureViewController: UIViewController {
     }
     
     @IBAction func SaveButtonPressed(_ sender: Any) {
-        items.append(tempScaledImage)
+        let targetSize = CGSize(width: 100, height: 100)
+        let scaledImage = self.image.scalePreservingAspectRatio(targetSize: targetSize)
+        
+        
+        items.append(scaledImage)
         //ADD ORIGINAL IMAGE TO CORE DATA
-        saveToCoreData(image: tempScaledImage)
+        saveToCoreData(image: scaledImage)
     }
 }
 

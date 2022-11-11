@@ -16,7 +16,7 @@ let scaledImage = lakeImage.scalePreservingAspectRatio(
 )
 
 var items: [UIImage] = [scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage]
-var originalImages: [UIImage] = []
+var originalImages: [UIImage] = [scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage]
 
 protocol reloadView{
     func reloadCollectionView()
