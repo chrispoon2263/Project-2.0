@@ -51,15 +51,9 @@ class PictureViewController: UIViewController {
             DispatchQueue.main.async {
                 let image = UIImage(data: data)
                 self.imageView.image = image
-            }
-            
-            DispatchQueue(label: "GetImageQueue", qos: .background, attributes: .concurrent).async {
-                let image = UIImage(data: data)
+                
                 let targetSize = CGSize(width: 100, height: 100)
                 let scaledImage = image?.scalePreservingAspectRatio(targetSize: targetSize)
-                items.append(scaledImage!)
-                // TODO ADD ORIGINAL IMAGE TO COREDATA
-                self.saveToCoreData(image:scaledImage!)
                 self.tempScaledImage = scaledImage!
                 self.tempImage = image!
             }
