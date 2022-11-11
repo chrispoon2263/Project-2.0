@@ -27,6 +27,7 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     var imageView: UIImageView!
     let cellIdentifier = "CellIdentifier"
+    let imageSegueIdentifier = "ImageViewSegueIdentifier"
     var delegate:UIViewController!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -64,12 +65,51 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: Segue
         print("You selected cell #\(indexPath.item)!")
+        selectedImage = items[indexPath.item]
     }
     
     func reloadCollectionView(){
         self.collectionView.reloadData()
     }
-
+    
+    
+    // Clears ALL Of CoreData for debugging
+    func clearCoreData() {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "GeneratedImage")
+        var fetchedResults:[NSManagedObject]
+        
+        do {
+            try fetchedResults = context.fetch(request) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                for result:AnyObject in fetchedResults {
+                    context.delete(result as! NSManagedObject)
+                    print("\(result.value(forKey: "storedImage")!) has been deleted")
+                }
+            }
+            saveContext()
+            
+        } catch {
+            // if an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+    }
+    
+    // Saves context
+    func saveContext() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
 }
 
 extension UIImage {

@@ -69,7 +69,15 @@ class TextViewController: UIViewController {
     func isValidInput(urlString: String) ->  Bool {
 
         for chr in urlString {
-            if (!(chr >= "a" && chr <= "z") && !(chr >= "A" && chr <= "Z")) && !(chr == " "){
+            if (!(chr >= "a" && chr <= "z")
+                && !(chr >= "A" && chr <= "Z"))
+                && !(chr == " ")
+                && !(chr == "%")
+                && !(chr >= "0" && chr <= "9")
+                && !(chr == ",")
+                && !(chr == "%")
+                && !(chr == "=")
+                && !(chr == "?"){
                      return false
                   }
                }
