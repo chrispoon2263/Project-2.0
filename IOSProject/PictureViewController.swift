@@ -11,10 +11,19 @@ import CoreData
 
 class PictureViewController: UIViewController {
     
+  
+    @IBOutlet weak var spinningIndicator: UIActivityIndicatorView!
     var receiveString = ""
     var delegate: UIViewController!
     var urlString = "https://api.computerender.com/generate/"
-    var image = UIImage()
+    //observer on image variable to stop the spinningindicator when there is an image from the API call
+    var image = UIImage(){
+        didSet{
+            if (spinningIndicator.isAnimating){
+                spinningIndicator.stopAnimating()
+            }
+        }
+    }
     
     // Create UIImageView Programatically
     let imageView: UIImageView = {
@@ -33,6 +42,9 @@ class PictureViewController: UIViewController {
         imageView.center = CGPoint(x: view.bounds.midX, y: 350)
         view.addSubview(imageView)
         
+        //loading indicator
+        spinningIndicator.hidesWhenStopped = true
+        spinningIndicator.startAnimating()
         // Call the API
         callAPI()
     }
@@ -49,8 +61,22 @@ class PictureViewController: UIViewController {
 
             DispatchQueue.main.async {
                 //update UIImageView
-                self.image = UIImage(data: data)!
-                self.imageView.image = self.image
+                if UIImage(data: data) != nil{
+                    self.image = UIImage(data: data)!
+                    self.imageView.image = self.image
+                } else {
+                    print("DATA IS NIL SERVER OVERLOAD")
+                    let alert = UIAlertController(
+                        title: "Too Many Requests Server Cannot Handle",
+                        message: "Please Try again later",
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(
+                        title: "OK",
+                        style: .default
+                    ))
+                    self.present(alert, animated: true)
+                }
+                
             }
         })
         getDataTask.resume()
@@ -97,5 +123,8 @@ class PictureViewController: UIViewController {
         //ADD ORIGINAL IMAGE TO CORE DATA
         saveToCoreData(image: scaledImage)
     }
+        
+    
+    
 }
 
