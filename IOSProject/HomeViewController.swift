@@ -52,6 +52,8 @@ class HomeViewController: UIViewController {
                 items.append(image!)
             }
         }
+        
+        saveContext()
     }
     
     // Retrieves all images from core data
@@ -69,5 +71,17 @@ class HomeViewController: UIViewController {
         }
         
         return(fetchedResults)!
+    }
+    
+    // Saves context
+    func saveContext() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
     }
 }

@@ -15,8 +15,8 @@ let scaledImage = lakeImage.scalePreservingAspectRatio(
     targetSize: targetSize
 )
 
-var items: [UIImage] = [scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage]
-var originalImages: [UIImage] = [scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage, scaledImage]
+var items: [UIImage] = []
+var originalImages: [UIImage] = []
 
 protocol reloadView{
     func reloadCollectionView()
@@ -66,6 +66,7 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         // TODO: Segue
         print("You selected cell #\(indexPath.item)!")
         selectedImage = items[indexPath.item]
+        currentIndex = indexPath.item
     }
     
     func reloadCollectionView(){
