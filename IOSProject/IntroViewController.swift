@@ -8,11 +8,10 @@
 import UIKit
 
 class IntroViewController: UIViewController {
-
+    
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
 
 }

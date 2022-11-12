@@ -8,8 +8,8 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    var settingList: [String] = ["User profile", "Font size", "color setting", "dark mode"]
+    
+    var settingList: [String] = ["Audio", "dark mode"]
     var textCellIdentifier: String = "TextCell"
     @IBOutlet weak var tableView: UITableView!
     

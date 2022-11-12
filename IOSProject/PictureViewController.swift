@@ -11,7 +11,7 @@ import CoreData
 
 class PictureViewController: UIViewController {
     
-  
+    //MARK: - Instance Variables
     @IBOutlet weak var spinningIndicator: UIActivityIndicatorView!
     var receiveString = ""
     var delegate: UIViewController!
@@ -33,6 +33,9 @@ class PictureViewController: UIViewController {
         return imageView
     }()
     
+    //MARK: - viewDidLoad
+    // receives string from textVC and places imageView onto the VC
+    // starts up the loading animation and then calls the API
     override func viewDidLoad() {
         super.viewDidLoad()
         // Receive string from TextVC and add url in front of the receive string
@@ -49,7 +52,9 @@ class PictureViewController: UIViewController {
         callAPI()
     }
     
-    // API CALL function
+    //MARK: - callAPI
+    // API CALL function updating the imageview UI with main.async
+    // raises an alert when the server is not responding
     func callAPI(){
         guard let url = URL(string: urlString) else {
             return
@@ -103,6 +108,7 @@ class PictureViewController: UIViewController {
         }
     }
     
+    // Upon AlbumButton clicked it will pop off the stack two views and place AlbumVC onto the stack
     @IBAction func AlbumButtonPressed(_ sender: Any) {
         if let navController = self.navigationController{
             // Pop off two view controllers from the stack
@@ -113,12 +119,11 @@ class PictureViewController: UIViewController {
             navController.pushViewController(vc, animated: true)
         }
     }
-    
+    //Upon Savebutton clicked it will save the image to Coredata and global items array holding UIimage objects
     @IBAction func SaveButtonPressed(_ sender: Any) {
         let targetSize = CGSize(width: 100, height: 100)
         let scaledImage = self.image.scalePreservingAspectRatio(targetSize: targetSize)
-        
-        
+
         items.append(scaledImage)
         //ADD ORIGINAL IMAGE TO CORE DATA
         saveToCoreData(image: scaledImage)

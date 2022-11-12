@@ -7,17 +7,21 @@
 
 import UIKit
 
-class TextViewController: UIViewController {
+class TextViewController: UIViewController, UITextFieldDelegate {
     
+    //MARK: - InstanceVariables
     @IBOutlet weak var inputTextField: UITextField!
-    
     var delegate:UIViewController!
     var tempString: String?
     
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        inputTextField.delegate = self
     }
     
+    //MARK: - PrepareforSegue
+    // if the inputText is valid then segueto the PictureVC and send the altered string to PictureVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if inputTextField.text != "" && isValidInput(urlString: inputTextField.text!){
             print("SENDING THIS TEXT TO NEXTVC: \(inputTextField.text!.replacingOccurrences(of: " ", with: "-"))")
@@ -32,9 +36,8 @@ class TextViewController: UIViewController {
         }
     }
     
-    
+    // Upon CreateButton Pressed raises alert if special characters are used or if empty string
     @IBAction func createButtonPressed(_ sender: Any) {
-        
         // Check for special charcters if not raise alert
          if !isValidInput(urlString: inputTextField.text!){
             print("UNKOWN CHARACTERS")
@@ -66,8 +69,8 @@ class TextViewController: UIViewController {
         }
     }
     
+    // Helper function that checks the inputText if any character is valid w/ True or False
     func isValidInput(urlString: String) ->  Bool {
-
         for chr in urlString {
             if (!(chr >= "a" && chr <= "z")
                 && !(chr >= "A" && chr <= "Z"))
@@ -82,6 +85,17 @@ class TextViewController: UIViewController {
                   }
                }
         return true
+    }
+    
+    // Called when 'return' key pressed
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // Called when the user clicks on the view outside of the UITextField
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 }
