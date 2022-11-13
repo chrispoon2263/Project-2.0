@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Photos
 
 var selectedImage:UIImage!
 var currentIndex:Int!
@@ -31,6 +32,9 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         scrollView.minimumZoomScale = 1.3
         scrollView.maximumZoomScale = 5.0
         scrollView.zoomScale = 2.5
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(recognizer:)))
+        self.view.addGestureRecognizer(longPressRecognizer)
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -72,6 +76,54 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         if let albumVC = self.navigationController?.viewControllers.filter { $0 is AlbumViewController }.first {
             self.navigationController?.popToViewController(albumVC, animated: true)
         }
+    }
+    
+    // Allows the option for users to save images if long presses screen
+    @IBAction func handleLongPressGesture (recognizer: UILongPressGestureRecognizer) {
+        let controller = UIAlertController(
+            title: "Save Photo to Camera Roll",
+            message: "This photo will be saved to your camera roll.",
+            preferredStyle: .actionSheet)
+        
+        controller.addAction(UIAlertAction(
+            title: "Save",
+            style: .default,
+            handler: {
+                (alert: UIAlertAction!) in
+                
+                let status = PHPhotoLibrary.authorizationStatus()
+
+                // Photo library access has been granted
+                if (status == .authorized) {
+                    // Saves image to camera roll
+                    var imageToBeSaved = items[currentIndex]
+                    UIImageWriteToSavedPhotosAlbum(imageToBeSaved, nil, nil, nil);
+                }
+
+                // Photo library access has been denied
+                else if (status == .denied) {
+                    let secondController = UIAlertController(
+                        title: "No Access to Camera Roll",
+                        message: "Permission to access camera roll was denied. Please go to device settings to change your preferences.",
+                        preferredStyle: .alert)
+                    
+                    secondController.addAction(UIAlertAction(
+                        title: "OK",
+                        style: .default))
+                    
+                    secondController.addAction(UIAlertAction(
+                        title: "Cancel",
+                        style: .cancel))
+                    
+                    self.present(secondController, animated: true)
+                }
+            }))
+            
+        controller.addAction(UIAlertAction(
+            title: "Cancel",
+            style: .cancel))
+            
+        present(controller, animated: true)
     }
     
     // Retrieves all images from core data
