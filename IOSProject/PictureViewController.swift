@@ -124,9 +124,11 @@ class PictureViewController: UIViewController {
         let targetSize = CGSize(width: 100, height: 100)
         let scaledImage = self.image.scalePreservingAspectRatio(targetSize: targetSize)
 
-        items.append(scaledImage)
+        //items.append(scaledImage)
+        items.append(self.image)
         //ADD ORIGINAL IMAGE TO CORE DATA
-        saveToCoreData(image: scaledImage)
+        //saveToCoreData(image: scaledImage)
+        saveToCoreData(image: self.image)
     }
         
     

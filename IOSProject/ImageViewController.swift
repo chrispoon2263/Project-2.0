@@ -29,9 +29,9 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         view.addSubview(scrollView)
         
         scrollView.delegate = self
-        scrollView.minimumZoomScale = 1.3
-        scrollView.maximumZoomScale = 5.0
-        scrollView.zoomScale = 2.5
+        scrollView.minimumZoomScale = 0.5
+        scrollView.maximumZoomScale = 4.0
+        scrollView.zoomScale = 1.3
         
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(recognizer:)))
         self.view.addGestureRecognizer(longPressRecognizer)

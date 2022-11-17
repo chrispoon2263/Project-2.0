@@ -134,11 +134,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-a7-wSU">
-                                <rect key="frame" x="28" y="101" width="346" height="743"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-a7-wSU">
+                                <rect key="frame" x="0.0" y="91" width="390" height="753"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lr3-WH-wAV">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lr3-WH-wAV">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -161,6 +160,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zkr-fR-fb4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zkr-fR-fb4" firstAttribute="trailing" secondItem="5TH-a7-wSU" secondAttribute="trailing" id="3FQ-ls-Waf"/>
+                            <constraint firstItem="5TH-a7-wSU" firstAttribute="leading" secondItem="Zkr-fR-fb4" secondAttribute="leading" id="FfK-iK-0CN"/>
+                            <constraint firstItem="5TH-a7-wSU" firstAttribute="top" secondItem="Zkr-fR-fb4" secondAttribute="top" id="GNP-kp-dgo"/>
+                            <constraint firstAttribute="bottom" secondItem="5TH-a7-wSU" secondAttribute="bottom" id="r6s-es-0pD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bbc-Gh-gAy"/>
                     <connections>

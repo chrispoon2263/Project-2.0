@@ -22,7 +22,7 @@ protocol reloadView{
     func reloadCollectionView()
 }
 
-class AlbumViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, reloadView{
+class AlbumViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, reloadView{
   
 
     var imageView: UIImageView!
@@ -53,9 +53,10 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
         
-        var imageView:UIImageView=UIImageView(frame: CGRect(x:0, y:0, width:100, height:100))
+        var imageView:UIImageView=UIImageView(frame: CGRect(x:0, y:0, width:128, height:128))
         var img = items[indexPath.row]
         imageView.image = img
+        imageView.contentMode = .scaleAspectFill
         cell.contentView.addSubview(imageView)
         
         return cell
@@ -67,6 +68,19 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         print("You selected cell #\(indexPath.item)!")
         selectedImage = items[indexPath.item]
         currentIndex = indexPath.item
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+                let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+
+                let numCellsInRow = 3
+
+                let collectionViewWidth = self.collectionView.bounds.width
+                let extraSpace = CGFloat(numCellsInRow - 1) * flowLayout.minimumInteritemSpacing
+                let inset = flowLayout.sectionInset.right + flowLayout.sectionInset.left
+                let width = Int((collectionViewWidth - extraSpace - inset) / CGFloat(numCellsInRow))
+
+                return CGSize(width: width, height: width)
     }
     
     func reloadCollectionView(){
