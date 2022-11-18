@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class BackgroundMusicViewController: UIViewController {
 
@@ -15,18 +14,12 @@ class BackgroundMusicViewController: UIViewController {
         super.viewDidLoad()
     }
     
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-
-    }
-    
-    
+    //Stop Music
     @IBAction func stopMusicButton(_ sender: Any) {
         AudioPlayer.stop()
     }
     
-    
+    //Start Music
     @IBAction func playMusicButton(_ sender: Any) {
         if AudioPlayer.isPlaying {
             AudioPlayer.pause()

@@ -11,6 +11,7 @@ import FirebaseCore
 import PhotosUI
 import AVFoundation
 
+//Create Generic AudioPlayer
 var AudioPlayer = AVAudioPlayer()
 
 @main
@@ -23,12 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         PHPhotoLibrary.requestAuthorization { (status) in }
         
-        //Play music
+        //Add settings to generic audioplayer
         let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "morningCoffee", ofType: "mp3")!)
         AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
-        
-        
-        
+
         return true
     }
 
