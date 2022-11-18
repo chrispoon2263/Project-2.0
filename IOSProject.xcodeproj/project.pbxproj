@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		51015D9429031FFF00CE41BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51015D9329031FFF00CE41BE /* HomeViewController.swift */; };
 		A508891829034B5500B7B9FD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508891729034B5500B7B9FD /* SettingsViewController.swift */; };
+		A563E685292837DB009FBFE4 /* BackgroundMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A563E684292837DB009FBFE4 /* BackgroundMusicViewController.swift */; };
+		A563E68829283F1A009FBFE4 /* morningCoffee.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A563E68729283F1A009FBFE4 /* morningCoffee.mp3 */; };
 		A5703EE4290CBE82001673C6 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5703EE3290CBE82001673C6 /* AlbumViewController.swift */; };
 		A5703EE6290CBEA1001673C6 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5703EE5290CBEA1001673C6 /* CollectionViewCell.swift */; };
 		A5A87BF22913706100567C7C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A5A87BF12913706100567C7C /* FirebaseAuth */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		51015D9329031FFF00CE41BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A508891729034B5500B7B9FD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A563E684292837DB009FBFE4 /* BackgroundMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicViewController.swift; sourceTree = "<group>"; };
+		A563E68729283F1A009FBFE4 /* morningCoffee.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = morningCoffee.mp3; sourceTree = "<group>"; };
 		A5703EE3290CBE82001673C6 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		A5703EE5290CBEA1001673C6 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A5A87BF32913711500567C7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -68,6 +72,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A563E68629283EE9009FBFE4 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				A563E68729283F1A009FBFE4 /* morningCoffee.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		A5E71A4A2902FF9400A64124 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +103,7 @@
 				A5E71A562902FF9400A64124 /* AppDelegate.swift */,
 				A5E71A582902FF9400A64124 /* SceneDelegate.swift */,
 				A5E71A5C2902FF9400A64124 /* Main.storyboard */,
+				A563E684292837DB009FBFE4 /* BackgroundMusicViewController.swift */,
 				A5A87BFB291375B600567C7C /* IntroViewController.swift */,
 				A5A87BFD2913792A00567C7C /* SignUpViewController.swift */,
 				A5A87BF72913749C00567C7C /* LogInViewController.swift */,
@@ -106,6 +119,7 @@
 				A5E71A642902FF9600A64124 /* LaunchScreen.storyboard */,
 				A5E71A672902FF9600A64124 /* Info.plist */,
 				A5E71A5F2902FF9400A64124 /* IOSProject.xcdatamodeld */,
+				A563E68629283EE9009FBFE4 /* Music */,
 			);
 			path = IOSProject;
 			sourceTree = "<group>";
@@ -176,6 +190,7 @@
 			files = (
 				A5E71A662902FF9600A64124 /* LaunchScreen.storyboard in Resources */,
 				A5A87BF42913711500567C7C /* GoogleService-Info.plist in Resources */,
+				A563E68829283F1A009FBFE4 /* morningCoffee.mp3 in Resources */,
 				A5E71A632902FF9600A64124 /* Assets.xcassets in Resources */,
 				A5E71A5E2902FF9400A64124 /* Main.storyboard in Resources */,
 			);
@@ -192,6 +207,7 @@
 				A5E71A612902FF9400A64124 /* IOSProject.xcdatamodeld in Sources */,
 				A5A87BFC291375B600567C7C /* IntroViewController.swift in Sources */,
 				A5703EE6290CBEA1001673C6 /* CollectionViewCell.swift in Sources */,
+				A563E685292837DB009FBFE4 /* BackgroundMusicViewController.swift in Sources */,
 				A508891829034B5500B7B9FD /* SettingsViewController.swift in Sources */,
 				A5E71A572902FF9400A64124 /* AppDelegate.swift in Sources */,
 				F276ECA4291EF36A00EE75C0 /* ImageViewController.swift in Sources */,
@@ -350,6 +366,7 @@
 				DEVELOPMENT_TEAM = JCY46Q53S8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOSProject/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to photo library is required to save generated images to your camera roll.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -379,6 +396,7 @@
 				DEVELOPMENT_TEAM = JCY46Q53S8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IOSProject/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to photo library is required to save generated images to your camera roll.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

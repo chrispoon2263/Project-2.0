@@ -33,8 +33,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     // Animates the deselect row
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if settingList[indexPath.row] == "Audio"{
+            if let navController = self.navigationController{
+                // Push the BackgroundMusicVC to the stack
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "BackgroundMusicViewController") as! BackgroundMusicViewController
+                navController.pushViewController(vc, animated: true)
+            }
+        }
         tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 
-
+    
 }
