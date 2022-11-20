@@ -6,7 +6,7 @@
     - Use minimum deployment: IOS version 13
     - Use an iPhone 13 pro max Simulator
     - Use this test account for logging in:
-    - email: test@gmail.com
+        - email: test@gmail.com
         - password: abcdef
 
 ## **Required feature checklist**
@@ -65,10 +65,10 @@
 | Core Audio          | Allow users to turn music on/off in the settings VC                                               | Chris (100%)                       |
 | Implement Core Data | Allow user to save pictures in the album upon picture creation / Delete pictures                  | Steph (100%)                       |
 | Create Album Collection View | Allows user to view and select pictures created                                          | Steph (100%)                       |
-| Implement Scroll View | Upon picture selection in AlbumVC and scroll around in the picture                              | Steph (100%)                       |
+| Scroll View         | Upon picture selection in AlbumVC and scroll around in the picture                                | Steph (100%)                       |
 | Loading animation   | Create loading animation while waiting for API Call                                               | Chris (100%)                       |
-| API Call Multithreading | Call API using multithreading                                                                 | Chris (100%)                       |
-| Create Text Input   | Used to read user input for keywords for AI generation                                            | Chris (100%)                       |
+| API Call Multithreading | Call API using multithreading and alerts user when server doesn't respond                     | Chris (100%)                       |
+| Create Text Input   | Used to read user input for keywords for AI generation and alerts with bad values                 | Chris (100%)                       |
 | Logo Screen         | Intro Page with logo screen and login                                                             | Chris (100%)                       |
 | Settings screen     | implemented with tableView                                                                        | Chris (100%)                       |
 | Gesture Recognition | Use long press to save to camera roll                                                             | Steph (100%)                       |
