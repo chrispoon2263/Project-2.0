@@ -1,6 +1,6 @@
 # **Name of project: ArtI**
-Team members: Christopher Poon, Stephanie Vu, Peiran Wang
-Dependencies: Xcode Version 14.0.1, Swift 5, Firebase 9.6.0
+    - Team members: Christopher Poon, Stephanie Vu, Peiran Wang
+    - Dependencies: Xcode Version 14.0.1, Swift 5, Firebase 9.6.0
 
 ## **Special Instructions:**
      - Use minimum deployment IOS version 13
@@ -11,10 +11,10 @@ Dependencies: Xcode Version 14.0.1, Swift 5, Firebase 9.6.0
 
 ## **Required feature checklist**
 - [x] Login/register path with Firebase.
-- [ ] “Settings” screen. The three behaviors we implemented are: (waived by Dr. Bulko)
-    - [x] sound on/off (waived by Dr. Bulko)
-    - [ ] dark mode (waived by Dr. Bulko)
-    - [ ] font change (waived by Dr. Bulko)
+- [ ] “Settings” screen. The three behaviors we implemented are: (waived)
+    - [x] sound on/off (waived)
+    - [ ] dark mode (waived)
+    - [ ] font change (waived)
 - [x] Non-default fonts and colors used
 
 ## **Two major elements used:**
@@ -52,8 +52,26 @@ Dependencies: Xcode Version 14.0.1, Swift 5, Firebase 9.6.0
     - [x] Core Audio
     - [ ] Others (such as QR code, Koloda, etc.) with approval from the instructor – list them
 
+## **Work Distribution Table:**
+| Required Feature    | Description                                                                                       | Who / Percentage worked on         |
+| ------------------- | --------------------------------------------------------------------------------------------------| -----------------------------------|
+| Login / Register    | Allows user to create account and login through firebase                                          | Chris (100%)                       |
+| UI Design           | Team shared equally in designing the wireframe for the app, and selecting colors and fonts.       | Chris (33%) Steph (33%) Pei (33%)  |
+| Title/Logo          | Team shared equally in name and logo design                                                       | Chris (33%) Steph (33%) Pei (33%)  |
+| Create Logo         | Fox designed with AI generated art                                                                | Steph (100%)                       |
+| Create Backgrounds  | Apply themes with background images                                                               | Steph (100%)                       |
+| Apply Theme         | Apply Backgrounds, themes, fonts  to All VC                                                       | Pei   ()                           |
+| Home Scren VC       | Allow users to choose between Make Image VC, Album VC, Setting VC pathway                         | Steph (100%)                       |
+| Core Audio          | Allow users to turn music on/off in the settings VC                                               | Chris (100%)                       |
+| Implement Core Data | Allow user to save pictures in the album upon picture creation / Delete pictures                  | Steph (100%)                       |
+| Create Album Collection View | Allows user to view and select pictures created                                          | Steph (100%)                       |
+| Implement Scroll View | Upon picture selection in AlbumVC and scroll around in the picture                              | Steph (100%)                       |
+| Loading animation   | Create loading animation while waiting for API Call                                               | Chris (100%)                       |
+| API Call Multithreading | Call API using multithreading                                                                 | Chris (100%)                       |
+| Create Text Input   | Used to read user input for keywords for AI generation                                            | Chris (100%)                       |
+| Logo Screen         | Intro Page with logo screen and login                                                             | Chris (100%)                       |
+| Settings screen     | implemented with tableView                                                                        | Chris (100%)                       |
+| Gesture Recognition | Use long press to save to camera roll                                                             | Steph (100%)                       |
+| Core Audio          | Allow background music between all VC using core audio                                            | Chris (100%)                       |
+| local Notification  | Pending                                                                                           | Pei   ()                           |
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
