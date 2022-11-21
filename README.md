@@ -25,7 +25,7 @@
 
 ## **Minor Elements used:**
 - [ ] Two additional view types such as sliders, segmented controllers, etc. The two we implemented are: 
-    - [ ] 
+    - [x] segmented controller in backgroundaudioVC 
     - [ ] 
     ### **One of the following:**
     - [x] Table View
