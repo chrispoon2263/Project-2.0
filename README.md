@@ -24,9 +24,9 @@
 - [ ] SwiftUI
 
 ## **Minor Elements used:**
-- [ ] Two additional view types such as sliders, segmented controllers, etc. The two we implemented are: 
+- [x] Two additional view types such as sliders, segmented controllers, etc. The two we implemented are: 
     - [x] segmented controller in backgroundaudioVC 
-    - [ ] 
+    - [x] bar button (delete button) in the imageVC
     ### **One of the following:**
     - [x] Table View
     - [x] Collection View
