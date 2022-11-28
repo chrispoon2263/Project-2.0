@@ -61,7 +61,7 @@
 | Create Logo         | Fox designed with AI generated art                                                                | Steph (100%)                       |
 | Create Backgrounds  | Apply themes with background images                                                               | Steph (100%)                       |
 | Apply Theme         | Apply Backgrounds, themes, fonts  to All VC                                                       | Pei   ()                           |
-| Home Scren VC       | Allow users to choose between Make Image VC, Album VC, Setting VC pathway                         | Steph (100%)                       |
+| Home Screen VC       | Allow users to choose between Make Image VC, Album VC, Setting VC pathway                        | Steph (100%)                       |
 | Core Audio          | Allow users to turn music on/off in the settings VC                                               | Chris (100%)                       |
 | Implement Core Data | Allow user to save pictures in the album upon picture creation / Delete pictures                  | Steph (100%)                       |
 | Create Album Collection View | Allows user to view and select pictures created                                          | Steph (100%)                       |
@@ -74,4 +74,3 @@
 | Gesture Recognition | Use long press to save to camera roll                                                             | Steph (100%)                       |
 | Core Audio          | Allow background music between all VC using core audio                                            | Chris (100%)                       |
 | local Notification  | Pending                                                                                           | Pei   ()                           |
-
