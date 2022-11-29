@@ -45,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6640" y="-768"/>
+            <point key="canvasLocation" x="7569" y="-768"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="cHs-TN-n6j">
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhC-tg-Hbr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6640" y="942"/>
+            <point key="canvasLocation" x="7569" y="942"/>
         </scene>
         <!--Background Music View Controller-->
         <scene sceneID="Fv4-r5-Lq6">
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNr-e7-q7M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7442" y="942"/>
+            <point key="canvasLocation" x="8371" y="942"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="8t4-Zp-rRg">
@@ -176,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rty-Uo-TpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7816.9230769230762" y="-768.48341232227483"/>
+            <point key="canvasLocation" x="8371" y="-768"/>
         </scene>
         <!--Album View Controller-->
         <scene sceneID="i7U-Ls-bc4">
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9F-46-DZN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6640" y="38"/>
+            <point key="canvasLocation" x="7569.2307692307686" y="37.677725118483409"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="20d-y8-sAA">
@@ -248,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZF-Jt-PVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7443" y="38"/>
+            <point key="canvasLocation" x="8370.7692307692305" y="37.677725118483409"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="P7u-Jb-2BB">
@@ -258,60 +258,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ld-B8-Bfm">
-                                <rect key="frame" x="70" y="398.33333333333331" width="250" height="34.333333333333314"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Equ-6G-N6a"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIg-lm-DfQ">
+                                <rect key="frame" x="137" y="282" width="117" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Album"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Make Image"/>
                                 <connections>
-                                    <action selector="albumButtonPressed:" destination="uBd-US-fak" eventType="touchUpInside" id="Ebt-FL-jwu"/>
-                                    <segue destination="ukL-gk-ooC" kind="show" identifier="AlbumSegueIdentifier" id="RbD-gf-vEl"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ImageSegueIdentifier" id="ant-fW-a6Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRt-la-fX0">
-                                <rect key="frame" x="70" y="276" width="250" height="34.333333333333314"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="rHv-Bt-pyA"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePX-WX-Z6j">
+                                <rect key="frame" x="159" y="392" width="73" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Make Image"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Album"/>
                                 <connections>
-                                    <action selector="makeImageButtonPressed:" destination="uBd-US-fak" eventType="touchUpInside" id="fZy-3o-sFL"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ImageSegueIdentifier" id="N9X-JL-iz6"/>
+                                    <segue destination="ukL-gk-ooC" kind="show" identifier="AlbumSegueIdentifier" id="woE-0r-GQF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZH-Hj-JjA">
-                                <rect key="frame" x="70" y="520.66666666666663" width="250" height="34.333333333333371"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="qOH-2Q-Rhj"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSx-1u-ilj">
+                                <rect key="frame" x="156" y="499" width="79" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Settings"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Setting"/>
                                 <connections>
-                                    <action selector="settingsButtonPressed:" destination="uBd-US-fak" eventType="touchUpInside" id="tNC-IF-dBX"/>
-                                    <segue destination="1tz-Av-oa9" kind="show" id="xCA-1b-eA3"/>
+                                    <segue destination="1tz-Av-oa9" kind="show" id="hkl-id-WGD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vxW-wT-C2x"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <accessibility key="accessibilityConfiguration" identifier="SegueToHomeVC"/>
-                        <constraints>
-                            <constraint firstItem="6ld-B8-Bfm" firstAttribute="centerX" secondItem="San-h9-89K" secondAttribute="centerX" id="2RT-nq-nm0"/>
-                            <constraint firstItem="IRt-la-fX0" firstAttribute="centerX" secondItem="San-h9-89K" secondAttribute="centerX" id="Bjs-nG-e9b"/>
-                            <constraint firstItem="PZH-Hj-JjA" firstAttribute="centerX" secondItem="San-h9-89K" secondAttribute="centerX" id="KA4-Yr-Y1K"/>
-                            <constraint firstItem="IRt-la-fX0" firstAttribute="top" secondItem="vxW-wT-C2x" secondAttribute="top" constant="185" id="PGc-5q-pjM"/>
-                            <constraint firstItem="6ld-B8-Bfm" firstAttribute="top" secondItem="IRt-la-fX0" secondAttribute="bottom" constant="88" id="ori-9n-ICV"/>
-                            <constraint firstItem="PZH-Hj-JjA" firstAttribute="top" secondItem="6ld-B8-Bfm" secondAttribute="bottom" constant="88" id="zyA-n5-WW6"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yAt-gq-0fP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Hx-vg-TnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5388" y="38"/>
+            <point key="canvasLocation" x="6316.9230769230771" y="37.677725118483409"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="lQm-b6-PBq">
@@ -394,7 +377,7 @@
                         <outlet property="emailTextField" destination="Bxd-OB-H8l" id="06M-fI-NSJ"/>
                         <outlet property="errorLabel" destination="b8W-V3-ogz" id="LNw-yC-cdh"/>
                         <outlet property="passwordTextField" destination="Q9N-AB-U6e" id="PLI-x7-SuD"/>
-                        <segue destination="uBd-US-fak" kind="show" identifier="SegueIdentifierSignUp" id="EcU-PZ-fbf"/>
+                        <segue destination="DPt-ft-qj9" kind="presentation" identifier="SegueIdentifierSignUp" modalPresentationStyle="fullScreen" id="EcU-PZ-fbf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oon-Z6-xQ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -446,7 +429,7 @@
                         <outlet property="emailTF" destination="1lI-y7-DjB" id="0o5-PS-7x5"/>
                         <outlet property="errorMessageLabel" destination="hoe-fw-9km" id="dlJ-06-RgQ"/>
                         <outlet property="pwTF" destination="Qpo-d1-Qfh" id="JRq-73-pYe"/>
-                        <segue destination="uBd-US-fak" kind="show" identifier="SegueIdentifierLogIn" id="4vH-2w-uez"/>
+                        <segue destination="DPt-ft-qj9" kind="presentation" identifier="SegueIdentifierLogIn" modalPresentationStyle="fullScreen" id="4vH-2w-uez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfD-Ig-mbL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -470,6 +453,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAI-By-FSW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1575" y="38"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sR9-SS-0lk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DPt-ft-qj9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="SjA-QA-62G"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qqA-QL-eoR">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uBd-US-fak" kind="relationship" relationship="rootViewController" id="yN9-sA-Msi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0a-q3-r1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5387.6923076923076" y="37.677725118483409"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 let context = appDelegate.persistentContainer.viewContext
@@ -19,6 +20,17 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         coreData()
     }
+
+
+//    @IBAction func logOutButtonPressed(_ sender: Any) {
+//        do {
+//            items = []
+//            try Auth.auth().signOut()
+//            self.dismiss(animated: true)
+//        } catch {
+//            print("sign out error")
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == imageSegueIdentifier, let nextVC = segue.destination as? TextViewController {
@@ -31,15 +43,6 @@ class HomeViewController: UIViewController {
         
     }
     
-    @IBAction func makeImageButtonPressed(_ sender: Any) {
-    }
-    
-    @IBAction func albumButtonPressed(_ sender: Any) {
-    }
-    
-    @IBAction func settingsButtonPressed(_ sender: Any) {
-    }
-
     // Fetches core data
     func coreData() {
         let fetchedResults = retrieveImages()
