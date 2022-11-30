@@ -264,28 +264,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIg-lm-DfQ">
-                                <rect key="frame" x="137" y="282" width="117" height="35"/>
+                                <rect key="frame" x="138" y="262" width="116" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Make Image"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Make Image">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="ImageSegueIdentifier" id="ant-fW-a6Q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePX-WX-Z6j">
-                                <rect key="frame" x="159" y="392" width="73" height="35"/>
+                                <rect key="frame" x="160" y="405" width="71" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Album"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Album">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="ukL-gk-ooC" kind="show" identifier="AlbumSegueIdentifier" id="woE-0r-GQF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSx-1u-ilj">
-                                <rect key="frame" x="156" y="499" width="79" height="35"/>
+                                <rect key="frame" x="157" y="558" width="74" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Setting"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Setting">
+                                    <fontDescription key="titleFontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="1tz-Av-oa9" kind="show" id="hkl-id-WGD"/>
                                 </connections>
