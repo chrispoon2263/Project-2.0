@@ -14,6 +14,16 @@ class BackgroundMusicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set background image
+        let backgroundImage = UIImage(named: "BG4")
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
     }
     
     

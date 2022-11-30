@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var settingList: [String] = ["Audio", "dark mode"]
+    var settingList: [String] = ["Audio", "Dark Mode", "Font"]
     var textCellIdentifier: String = "TextCell"
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,7 +17,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+        
+        // set background image
+        let backgroundImage = UIImage(named: "BG4")
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
     }
 
     // MARK: - TABLEVIEW FUNCTIONS
@@ -29,6 +39,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         let row = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         cell.textLabel?.text = settingList[row]
+        
+        // Add font to each cell
+        if #available(iOS 15.0, *) {
+            cell.textLabel?.font = UIFont(name: "Futura Medium", size: 16.0)
+        } else{
+            // default to system font
+        }
         return cell
     }
     // Animates the deselect row
