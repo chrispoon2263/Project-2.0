@@ -3,7 +3,7 @@
     - Dependencies: Xcode Version 14.0.1, Swift 5, Firebase 9.6.0
 
 ## **Special Instructions:**
-    - Use minimum deployment: IOS version 13
+    - Use minimum deployment: IOS version 15.0
     - Use an iPhone 13 pro max Simulator
     - Use this test account for logging in:
         - email: test@gmail.com
