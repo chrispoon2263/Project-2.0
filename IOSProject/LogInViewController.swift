@@ -14,12 +14,29 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pwTF: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     
+    @IBOutlet weak var logIn: UIButton!
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTF.delegate = self
         pwTF.delegate = self
         pwTF.isSecureTextEntry = true
+        
+        // set background image
+        let backgroundImage = UIImage(named: "BG1")
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
+        if #available(iOS 15.0, *) {
+            logIn.configuration?.attributedTitle?.font = UIFont(name: "Futura Medium", size: 16.0)
+        } else {
+            // Fallback on earlier versions
+        }
 
     }
     

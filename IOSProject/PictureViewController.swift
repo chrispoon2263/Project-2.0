@@ -32,6 +32,8 @@ class PictureViewController: UIViewController {
         imageView.clipsToBounds = true
         return imageView
     }()
+    @IBOutlet weak var albumButton: UIButton!
+    @IBOutlet weak var save: UIButton!
     
     //MARK: - viewDidLoad
     // receives string from textVC and places imageView onto the VC
@@ -50,6 +52,23 @@ class PictureViewController: UIViewController {
         spinningIndicator.startAnimating()
         // Call the API
         callAPI()
+        
+        // set background image
+        let backgroundImage = UIImage(named: "BG4")
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
+        if #available(iOS 15.0, *) {
+            save.configuration?.attributedTitle?.font = UIFont(name: "Futura Medium", size: 16.0)
+            albumButton.configuration?.attributedTitle?.font = UIFont(name: "Futura Medium", size: 16.0)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     //MARK: - callAPI

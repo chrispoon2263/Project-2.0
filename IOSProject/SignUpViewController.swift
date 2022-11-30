@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Instance Variables
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signUp: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
     // MARK: - ViewDidLoad
@@ -21,6 +22,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
+        
+        // set background image
+        let backgroundImage = UIImage(named: "BG1")
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
+        if #available(iOS 15.0, *) {
+            signUp.configuration?.attributedTitle?.font = UIFont(name: "Futura Medium", size: 16.0)
+        } else {
+            // Fallback on earlier versions
+        }
         }
     
     // MARK: - ViewDidDisappear

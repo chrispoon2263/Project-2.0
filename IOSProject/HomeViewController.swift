@@ -15,10 +15,30 @@ let imageSegueIdentifier = "ImageSegueIdentifier"
 let albumSegueIdentifier = "AlbumSegueIdentifier"
 
 class HomeViewController: UIViewController {
-    
+    @IBOutlet weak var buttons: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var makeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         coreData()
+        
+        // set background image
+        let backgroundImage = UIImage(named: "BG2")
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
+        if #available(iOS 15.0, *) {
+            buttons.configuration?.attributedTitle?.font = UIFont(name: "Futura Medium", size: 16.0)
+            settingsButton.configuration?.attributedTitle?.font = UIFont(name: "Futura Medium", size: 16.0)
+            makeButton.configuration?.attributedTitle?.font = UIFont(name: "Futura Medium", size: 16.0)
+        } else {
+            // Fallback on earlier versions
+        }
     }
 
 

@@ -12,12 +12,29 @@ class TextViewController: UIViewController, UITextFieldDelegate {
     //MARK: - InstanceVariables
     @IBOutlet weak var inputTextField: UITextField!
     var delegate:UIViewController!
+    @IBOutlet weak var create: UIButton!
     var tempString: String?
     
     //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         inputTextField.delegate = self
+        
+        // set background image
+        let backgroundImage = UIImage(named: "BG4")
+        let imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
+        if #available(iOS 15.0, *) {
+            create.configuration?.attributedTitle?.font = UIFont(name: "Futura Medium", size: 16.0)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     //MARK: - PrepareforSegue
