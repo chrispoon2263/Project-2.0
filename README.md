@@ -1,5 +1,5 @@
-# **Name of project: ArtI**
-    - Description: AI art generator 
+# **Name of project: aRTi**
+    - Description: AI art generator that uses open diffusion model through an API 
     - Team members: Christopher Poon, Stephanie Vu, Peiran Wang
     - Dependencies: Xcode Version 14.0.1, Swift 5, Firebase 9.6.0
 
