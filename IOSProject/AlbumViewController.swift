@@ -8,15 +8,9 @@
 import UIKit
 import CoreData
 
-let lakeImage = UIImage(named: "lake.png")!
 let targetSize = CGSize(width: 100, height: 100)
 
-let scaledImage = lakeImage.scalePreservingAspectRatio(
-    targetSize: targetSize
-)
-
 var items: [UIImage] = []
-var originalImages: [UIImage] = []
 
 protocol reloadView{
     func reloadCollectionView()
@@ -24,15 +18,12 @@ protocol reloadView{
 
 class AlbumViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, reloadView{
   
-
     var imageView: UIImageView!
     let cellIdentifier = "CellIdentifier"
     let imageSegueIdentifier = "ImageViewSegueIdentifier"
     var delegate:UIViewController!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +51,7 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         return items.count
     }
 
+    // Populates cells in collectionVC with images
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
         
@@ -72,14 +64,24 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: Segue
-        print("You selected cell #\(indexPath.item)!")
-        selectedImage = items[indexPath.item]
-        currentIndex = indexPath.item
+        //print("You selected cell #\(indexPath.item)!")
+        //selectedImage = items[indexPath.item]
+        //currentIndex = indexPath.item
     }
     
+    // Handles segue to ImageVC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == imageSegueIdentifier,
+           let destination = segue.destination as? ImageViewController,
+           let imageIndex = collectionView.indexPathsForSelectedItems?.first?.row {
+            destination.selectedImage = items[imageIndex]
+            currentIndex = imageIndex
+        }
+    }
+    
+    // Formats collectionVC to have 3 cells in each row
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
                 let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
 
@@ -96,7 +98,6 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
     func reloadCollectionView(){
         self.collectionView.reloadData()
     }
-    
     
     // Clears ALL Of CoreData for debugging
     func clearCoreData() {

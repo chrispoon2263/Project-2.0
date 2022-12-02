@@ -9,17 +9,18 @@ import UIKit
 import CoreData
 import Photos
 
-var selectedImage:UIImage!
 var currentIndex:Int!
 
 class ImageViewController: UIViewController, UIScrollViewDelegate {
 
     var scrollView: UIScrollView!
     var imageView: UIImageView!
+    var selectedImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Adds a scroll view
         imageView = UIImageView(image: selectedImage)
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = .black
@@ -33,6 +34,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         scrollView.maximumZoomScale = 4.0
         scrollView.zoomScale = 1.3
         
+        // Adds long press gesture recognizer
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(recognizer:)))
         self.view.addGestureRecognizer(longPressRecognizer)
     }
@@ -41,6 +43,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         return imageView
     }
     
+    // Handles deleting an image from album
     @IBAction func deleteButtonPressed(_ sender: Any) {
         let controller = UIAlertController(
             title: "Delete Photo",
@@ -81,8 +84,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     // Allows the option for users to save images if long presses screen
     @IBAction func handleLongPressGesture (recognizer: UILongPressGestureRecognizer) {
         let controller = UIAlertController(
-            title: "Save Photo to Camera Roll",
-            message: "This photo will be saved to your camera roll.",
+            title: "Save Photo to Photo Library",
+            message: "This photo will be saved to your photo library on your device.",
             preferredStyle: .actionSheet)
         
         controller.addAction(UIAlertAction(
@@ -95,7 +98,7 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
 
                 // Photo library access has been granted
                 if (status == .authorized) {
-                    // Saves image to camera roll
+                    // Saves image to device photo library
                     var imageToBeSaved = items[currentIndex]
                     UIImageWriteToSavedPhotosAlbum(imageToBeSaved, nil, nil, nil);
                 }
@@ -103,8 +106,8 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
                 // Photo library access has been denied
                 else if (status == .denied) {
                     let secondController = UIAlertController(
-                        title: "No Access to Camera Roll",
-                        message: "Permission to access camera roll was denied. Please go to device settings to change your preferences.",
+                        title: "No Access to Photo Library",
+                        message: "Permission to access photo library was denied. Please go to device settings to change your preferences.",
                         preferredStyle: .alert)
                     
                     secondController.addAction(UIAlertAction(

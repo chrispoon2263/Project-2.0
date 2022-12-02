@@ -41,17 +41,18 @@ class HomeViewController: UIViewController {
         }
     }
 
-
-//    @IBAction func logOutButtonPressed(_ sender: Any) {
-//        do {
-//            items = []
-//            try Auth.auth().signOut()
-//            self.dismiss(animated: true)
-//        } catch {
-//            print("sign out error")
-//        }
-//    }
+    // Handles log out
+    @IBAction func logOutButtonPressed(_ sender: Any) {
+        do {
+            items = []
+            try Auth.auth().signOut()
+            self.dismiss(animated: true)
+        } catch {
+            print("sign out error")
+        }
+    }
     
+    // Handles segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == imageSegueIdentifier, let nextVC = segue.destination as? TextViewController {
             nextVC.delegate = self
