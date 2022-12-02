@@ -1,4 +1,5 @@
 # **Name of project: ArtI**
+    - Description: AI art generator 
     - Team members: Christopher Poon, Stephanie Vu, Peiran Wang
     - Dependencies: Xcode Version 14.0.1, Swift 5, Firebase 9.6.0
 
@@ -8,6 +9,8 @@
     - Use this test account for logging in:
         - email: test@gmail.com
         - password: abcdef
+    - There is a cooldown on the number of keyphrases you can use on the free API
+        -10 images and about 10 minute cooldown period
 
 ## **Required feature checklist**
 - [x] Login/register path with Firebase.
@@ -61,7 +64,7 @@
 | Create Logo         | Fox designed with AI generated art                                                                | Steph (100%)                       |
 | Create Backgrounds  | Apply themes with background images                                                               | Steph (100%)                       |
 | Apply Theme         | Apply Backgrounds, themes, fonts  to All VC                                                       | Pei   (100%)                       |
-| Home Screen VC       | Allow users to choose between Make Image VC, Album VC, Setting VC pathway                        | Steph (100%)                       |
+| Home Screen VC      | Allow users to choose between Make Image VC, Album VC, Setting VC pathway                         | Steph (100%)                       |
 | Core Audio          | Allow users to turn music on/off in the settings VC                                               | Chris (100%)                       |
 | Implement Core Data | Allow user to save pictures in the album upon picture creation / Delete pictures                  | Steph (100%)                       |
 | Create Album Collection View | Allows user to view and select pictures created                                          | Steph (100%)                       |
