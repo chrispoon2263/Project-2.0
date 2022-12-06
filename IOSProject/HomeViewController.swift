@@ -39,6 +39,40 @@ class HomeViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+        
+        // MARK: create the local notification
+        // request permisson for notification
+        UNUserNotificationCenter.current().requestAuthorization(options:[.alert,.badge,.sound]) {
+            granted, error in
+            if granted {
+                print("All set!")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        // define the content
+        let content = UNMutableNotificationContent()
+        content.title = "Create an Art with aRTi"
+        content.body = "Let your creativity flow. Make masterpiece of your own everyday!"
+        // Configure the recurring date.
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        dateComponents.hour = 8   // everyday at 8:00
+        // Create the trigger as a repeating event.
+        let trigger = UNCalendarNotificationTrigger(
+                 dateMatching: dateComponents, repeats: true)
+        // Create the request
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString,
+                    content: content, trigger: trigger)
+
+        // Schedule the request with the system.
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.add(request) { (error) in
+           if error != nil {
+              print("Error occuring in local notification.")
+           }
+        }
     }
 
     // Handles log out
